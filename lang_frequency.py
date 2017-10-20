@@ -35,7 +35,7 @@ def get_most_frequent_words(text):
         register_of_words.append((dict_of_words[words], words))
 
     register_of_words = sorted(register_of_words)
-    register_of_words = sorted(register_of_words, key=lambda x: x[0], reverse=True)[0:10]
+    register_of_words = sorted(register_of_words, key=lambda x: x[0], reverse=True)[:10]
     return print_list(register_of_words)
 
 
