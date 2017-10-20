@@ -3,9 +3,9 @@ import re
 
 def load_data():
     filename = input("Enter path to the file: ")
-    myopen = open(filename, "r", encoding="utf8")
-    theText = myopen.readlines()
-    return theText
+    open_text = open(filename, "r", encoding="utf8")
+    formated_text = open_text.readlines()
+    return formated_text
 
 
 def formating(text):
@@ -17,26 +17,26 @@ def formating(text):
 
 
 def print_list(list):
-    for i in list:
-        print(i[0], "-", i[1])
+    for word in list:
+        print(word[0], "-", word[1])
 
 
 def get_most_frequent_words(text):
-    dictOfWords = dict()
+    dict_of_words = dict()
     for word in formating(text):
-        if word in dictOfWords:
-            dictOfWords[word] += 1
+        if word in dict_of_words:
+            dict_of_words[word] += 1
         else:
-            dictOfWords[word] = 1
+            dict_of_words[word] = 1
 
-    listOfWords = list()
+    list_of_words = list()
 
-    for i in dictOfWords:
-        listOfWords.append((dictOfWords[i], i))
+    for words in dict_of_words:
+        list_of_words.append((dict_of_words[words], words))
 
-    listOfWords = sorted(listOfWords)
-    listOfWords = sorted(listOfWords, key=lambda x: x[0], reverse=True)
-    return (print_list(listOfWords))
+    list_of_words = sorted(list_of_words)
+    list_of_words = sorted(list_of_words, key=lambda x: x[0], reverse=True)[1:11]
+    return print_list(list_of_words)
 
 
 print(get_most_frequent_words(load_data()), sep="\n")
