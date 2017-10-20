@@ -16,8 +16,8 @@ def formating(text):
     return text
 
 
-def print_list(file):
-    for word in file:
+def print_list(register):
+    for word in register:
         print(word[0], "-", word[1])
 
 
