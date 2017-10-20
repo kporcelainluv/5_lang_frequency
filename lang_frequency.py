@@ -16,8 +16,8 @@ def formating(text):
     return text
 
 
-def print_list(list):
-    for word in list:
+def print_list(file):
+    for word in file:
         print(word[0], "-", word[1])
 
 
@@ -29,14 +29,14 @@ def get_most_frequent_words(text):
         else:
             dict_of_words[word] = 1
 
-    list_of_words = list()
+    register_of_words = list()
 
     for words in dict_of_words:
-        list_of_words.append((dict_of_words[words], words))
+        register_of_words.append((dict_of_words[words], words))
 
-    list_of_words = sorted(list_of_words)
-    list_of_words = sorted(list_of_words, key=lambda x: x[0], reverse=True)[1:11]
-    return print_list(list_of_words)
+    register_of_words = sorted(register_of_words)
+    register_of_words = sorted(register_of_words, key=lambda x: x[0], reverse=True)[1:11]
+    return print_list(register_of_words)
 
 
 print(get_most_frequent_words(load_data()), sep="\n")
