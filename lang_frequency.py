@@ -18,9 +18,10 @@ def lowercase_split_strip_file(text):
 
 
 def get_ten_frequent_words(text):
+    number_of_frequent_words = 10
     text_to_list = list(lowercase_split_strip_file(text))
     dict_of_words = Counter(text_to_list)
-    return Counter(dict_of_words).most_common(10)
+    return Counter(dict_of_words).most_common(number_of_frequent_words)
 
 
 def print_list_of_frequent_words_in_column(list_of_frequent_words):
