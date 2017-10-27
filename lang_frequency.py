@@ -1,33 +1,31 @@
 import re
+import sys
 from collections import Counter
 
+filename = ""
 
-def load_data_from_file():
-    with open(input(), "r", encoding="utf8") as f:
-        text = f.readlines()
-        return text
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
 
 
-def lowercase_split_strip_file(text):
-    text = str(text).strip().lower()
-    text_after_formatting = re.findall(r'\w+', text)
-    for words in range(text_after_formatting.count("n")):
-        if "n" in text_after_formatting:
-            text_after_formatting.remove("n")
-    return text_after_formatting
+def load_data_lowercase_remove_punctuation():
+    with open(filename, "r", encoding="utf8") as f:
+        text = f.read().lower()
+    text_without_punctuation = re.findall(r'\w+', text)
+    return text_without_punctuation
 
 
 def get_ten_frequent_words(text):
     number_of_frequent_words = 10
-    text_to_list = list(lowercase_split_strip_file(text))
-    dict_of_words = Counter(text_to_list)
-    return Counter(dict_of_words).most_common(number_of_frequent_words)
+    counter_of_words = Counter(text)
+    return counter_of_words.most_common(number_of_frequent_words)
 
 
 def print_list_of_frequent_words_in_column(list_of_frequent_words):
-    for word in list_of_frequent_words:
-        print(word[0], "-", word[1])
+    for word, number in list_of_frequent_words:
+        print(word, "-", number)
 
 
-if __name__ == '__main__':
-    print(print_list_of_frequent_words_in_column(get_ten_frequent_words(load_data_from_file())), sep="\n")
+print(print_list_of_frequent_words_in_column(get_ten_frequent_words(load_data_lowercase_remove_punctuation())),
+      sep="\n")
