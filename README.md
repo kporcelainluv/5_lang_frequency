@@ -17,19 +17,20 @@ Functions in the library:
 * returns: a counter of 10 most frequent words from the file
 
 # How to launch
+```
 $ python lang_frequency.py input.txt
 
-* the - 70
-* of - 36
-* a - 36
-* in - 31
-* mifsud - 27
-* to - 24
-* that - 17
-* and - 15
-* contact - 12
-* cnn - 11
-
+the - 70
+of - 36
+a - 36
+in - 31
+mifsud - 27
+to - 24
+that - 17
+and - 15
+contact - 12
+cnn - 11
+```
 
 # Project Goals
 
