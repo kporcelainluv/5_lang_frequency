@@ -9,7 +9,7 @@ def load_data(filepath):
     return text
 
 
-def lowercase_text_remove_punctuation(text):
+def lowercases_text_and_removes_punctuation(text):
     text = text.lower()
     text_without_punctuation = re.findall(r'\w+', text)
     return text_without_punctuation
@@ -25,8 +25,10 @@ def print_list_of_frequent_words_in_column(list_of_frequent_words):
     for word, number in list_of_frequent_words:
         print(word, "-", number)
 
+
 if __name__ == '__main__':
-     if len(sys.argv) > 1:
+    if len(sys.argv) > 1:
         filepath = sys.argv[1]
 
-print_list_of_frequent_words_in_column(get_ten_frequent_words(lowercase_text_remove_punctuation(load_data(filepath))))
+print_list_of_frequent_words_in_column(
+    get_ten_frequent_words(lowercases_text_and_removes_punctuation(load_data(filepath))))
