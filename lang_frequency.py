@@ -28,5 +28,4 @@ def print_list_of_frequent_words_in_column(list_of_frequent_words):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         filepath = sys.argv[1]
-
-print_list_of_frequent_words_in_column(get_frequent_words(remove_punctuation(load_data(filepath))))
+    print_list_of_frequent_words_in_column(get_frequent_words(remove_punctuation(load_data(filepath))))
