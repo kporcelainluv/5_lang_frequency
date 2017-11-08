@@ -6,17 +6,17 @@ This is the library that counts first 10 frequent words from file
 
 Functions in the library:
 
-`<load_data()>`
+`load_data()`
 
 * input: text
 * returns: text from file
 
-`<split_text_remove_punctuation(text):>`
+`split_text_remove_punctuation(text):`
 
 * input: text
 * returns: lowercased list of strings without punctuation
 
-`<get_frequent_words(text)>`
+`get_frequent_words(text)`
 
 * input: text
 * returns: a counter of 10 most frequent words from the file
