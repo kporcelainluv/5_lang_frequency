@@ -9,7 +9,7 @@ def load_data(filepath):
     return text
 
 
-def split_text_remove_punctuation(text):
+def split_text(text):
     text_without_punctuation = re.findall(r'\w+', text.lower())
     return text_without_punctuation
 
