@@ -10,8 +10,8 @@ def load_data(filepath):
 
 
 def split_text(text):
-    text_without_punctuation = re.findall(r'\w+', text.lower())
-    return text_without_punctuation
+    list_of_splitted_text = re.findall(r'\w+', text.lower())
+    return list_of_splitted_text
 
 
 def get_frequent_words(list_of_words):
